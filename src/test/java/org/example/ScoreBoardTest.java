@@ -1,11 +1,19 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 public class ScoreBoardTest {
+    @Test
+    void testSomething(){
+        assertTrue(true);
+    }
     Scoreboard scoreboard = new Scoreboard();
 
+    //all tests for StartMatch
+    @Test
     public void testStartMatch(){
 
         scoreboard.startMatch("Mexico", "Canada");
@@ -29,6 +37,7 @@ public class ScoreBoardTest {
     }
 
     //test if homeTeam is empty - startMatch
+    @Test
     public void testEmptyHomeTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("", "Canada");
@@ -36,6 +45,7 @@ public class ScoreBoardTest {
     }
 
     //test if awayTeam is empty - startMatch
+    @Test
     public void testEmptyAwayTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", "");
@@ -43,6 +53,7 @@ public class ScoreBoardTest {
     }
 
     //test if both teams have same name - startMatch
+    @Test
     public void testSameTeams(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", "Mexico");
@@ -50,6 +61,7 @@ public class ScoreBoardTest {
     }
 
     //test if home team is null value - startMatch
+    @Test
     public void testNullHomeTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch(null, "Canada");
@@ -57,9 +69,48 @@ public class ScoreBoardTest {
     }
 
     //test if away team is null value - startMatch
+    @Test
     public void testNullAwayTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", null);
         });
     }
+
+
+    //all tests for UpdateScore
+    @Test
+    void testUpdateScore(){
+        scoreboard.startMatch("Mexico","Canada");
+        scoreboard.updateScore("Mexico", "Canada", 0, 1);
+        Match match = scoreboard.testOngoingMatches().get(0);
+        assertEquals(0, match.getHomeScore());
+        assertEquals(1, match.getAwayScore());
+    }
+
+    //test for non-existing match - updateScore
+    @Test
+    void testUpdateScoreNonExistingMatch(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore("Spain","Mexico", 3,0);
+        });
+    }
+
+    //test for negative homeScore - updateScore
+    @Test
+    void testUpdateScoreNegativeHomeScore(){
+        scoreboard.startMatch("Mexico", "Canada");
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore("Mexico", "Canada", -1, 0);
+        });
+    }
+
+    //test for negative awayScore - updateScore
+    @Test
+    void testUpdateScoreNegativeAwayScore(){
+        scoreboard.startMatch("Mexico", "Canada");
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore("Mexico", "Canada", 0, -1);
+        });
+    }
+
 }

@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="473d1b2f-47b7-4df0-871f-7e1960e9da9c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/example/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/org/example/Scoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/test/java/org/example/ScoreBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/test/java/org/example/ScoreBoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/example/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/example/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/test/java/org/example/ScoreBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ScoreBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,23 +57,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Korisnik/IdeaProjects/live-football-world-cup-score-board/src/main/java/org/example/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Korisnik/IdeaProjects/live-football-world-cup-score-board/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Korisnik\IdeaProjects\live-football-world-cup-score-board" />
       <recent name="C:\Users\Korisnik\IdeaProjects\live-football-world-cup-score-board\lib" />
     </key>
   </component>
@@ -112,7 +120,7 @@
       <updated>1742825369326</updated>
       <workItem from="1742825370392" duration="3628000" />
       <workItem from="1742829120408" duration="9864000" />
-      <workItem from="1742906678548" duration="501000" />
+      <workItem from="1742906678548" duration="6792000" />
     </task>
     <servers />
   </component>
@@ -123,7 +131,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lib/src/main/java/org/example/Main.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
