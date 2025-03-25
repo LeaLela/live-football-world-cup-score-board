@@ -95,6 +95,7 @@ public class ScoreBoardTest {
         });
     }
 
+
     //test for negative homeScore - updateScore
     @Test
     void testUpdateScoreNegativeHomeScore(){
@@ -113,4 +114,27 @@ public class ScoreBoardTest {
         });
     }
 
+    //test for null team names - updateScore
+    @Test
+    void testNullTeamNames(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore(null, "Canada", 0, 1);
+        });
+
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore("Mexico", null, 0, 1);
+        });
+    }
+
+    //test for empty team names - updateScore
+    @Test
+    void testEmptyTeamNames(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore(" ", "Canada",0,1);
+        });
+
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.updateScore("Mexico", " ",0,1);
+        });
+    }
 }
