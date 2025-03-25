@@ -10,45 +10,53 @@ public class ScoreBoardTest {
 
         scoreboard.startMatch("Mexico", "Canada");
 
-        //testiranje je li se match dodao u listu
+        //test to see if the match was added in the list
         List<Match> matches = scoreboard.testOngoingMatches();
 
         assertEquals(1, matches.size());
+
+        //check expected value of homeTeam and the one added in the list
         assertEquals("Mexico", matches.get(0).getHomeTeam());
+
+        //check expected value of awayTeam and the one added in the list
         assertEquals("Canada", matches.get(0).getAwayTeam());
+
+        //check expected value of homeScore and the one added in the list
         assertEquals(0, matches.get(0).getHomeScore());
+
+        //check expected value of awayScore and the one added in the list
         assertEquals(0, matches.get(0).getAwayScore());
     }
 
-    //Ako je homeTeam prazan - startMatch
+    //test if homeTeam is empty - startMatch
     public void testEmptyHomeTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("", "Canada");
         });
     }
 
-    //Ako je awayTeam prazan - startMatch
+    //test if awayTeam is empty - startMatch
     public void testEmptyAwayTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", "");
         });
     }
 
-    //Ako su upisani isti timovi - startMatch
+    //test if both teams have same name - startMatch
     public void testSameTeams(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", "Mexico");
         });
     }
 
-    //Ako je upisana null vrijednost na home team - startMatch
+    //test if home team is null value - startMatch
     public void testNullHomeTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch(null, "Canada");
         });
     }
 
-    //Ako je upisana null vrijednost na away team - startMatch
+    //test if away team is null value - startMatch
     public void testNullAwayTeam(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", null);

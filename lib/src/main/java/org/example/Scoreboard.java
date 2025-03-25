@@ -9,12 +9,17 @@ public class Scoreboard {
 
     public void startMatch(String homeTeam, String awayTeam){
 
+        //test empty value
         if(homeTeam.isEmpty() || awayTeam.isEmpty()){
             throw new IllegalArgumentException("Teams names cannot be empty.");
         }
+
+        //test same names of teams
         if(homeTeam.equals(awayTeam)){
             throw new IllegalArgumentException("Home team and away team cannot be the same.");
         }
+
+        //test null value
         if(homeTeam == null || awayTeam == null){
             throw new IllegalArgumentException("Teams names cannot be the same");
         }
@@ -31,7 +36,7 @@ public class Scoreboard {
 
     }
 
-    //getter za test je li se match dodao u listu
+    //getter for test to see if match was added in the list
     public List<Match> testOngoingMatches(){
         return ongoingMatches;
     }
