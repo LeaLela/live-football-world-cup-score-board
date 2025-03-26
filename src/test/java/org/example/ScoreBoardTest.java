@@ -6,10 +6,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ScoreBoardTest {
-    @Test
-    void testSomething(){
-        assertTrue(true);
-    }
     Scoreboard scoreboard = new Scoreboard();
 
     //all tests for StartMatch
@@ -54,7 +50,7 @@ public class ScoreBoardTest {
 
     //test if both teams have same name - startMatch
     @Test
-    public void testSameTeams(){
+    public void testStartMatchSameTeams(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.startMatch("Mexico", "Mexico");
         });
@@ -79,7 +75,7 @@ public class ScoreBoardTest {
 
     //all tests for UpdateScore
     @Test
-    void testUpdateScore(){
+    public void testUpdateScore(){
         scoreboard.startMatch("Mexico","Canada");
         scoreboard.updateScore("Mexico", "Canada", 0, 1);
         Match match = scoreboard.testOngoingMatches().get(0);
@@ -89,7 +85,7 @@ public class ScoreBoardTest {
 
     //test for non-existing match - updateScore
     @Test
-    void testUpdateScoreNonExistingMatch(){
+    public void testUpdateScoreNonExistingMatch(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore("Spain","Mexico", 3,0);
         });
@@ -98,7 +94,7 @@ public class ScoreBoardTest {
 
     //test for negative homeScore - updateScore
     @Test
-    void testUpdateScoreNegativeHomeScore(){
+    public void testUpdateScoreNegativeHomeScore(){
         scoreboard.startMatch("Mexico", "Canada");
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore("Mexico", "Canada", -1, 0);
@@ -107,7 +103,7 @@ public class ScoreBoardTest {
 
     //test for negative awayScore - updateScore
     @Test
-    void testUpdateScoreNegativeAwayScore(){
+    public void testUpdateScoreNegativeAwayScore(){
         scoreboard.startMatch("Mexico", "Canada");
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore("Mexico", "Canada", 0, -1);
@@ -116,7 +112,7 @@ public class ScoreBoardTest {
 
     //test for null team names - updateScore
     @Test
-    void testNullTeamNames(){
+    public void testUpdateScoreNullTeamNames(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore(null, "Canada", 0, 1);
         });
@@ -128,13 +124,55 @@ public class ScoreBoardTest {
 
     //test for empty team names - updateScore
     @Test
-    void testEmptyTeamNames(){
+    public void testUpdateScoreEmptyTeamNames(){
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore(" ", "Canada",0,1);
         });
 
         assertThrows(IllegalArgumentException.class, () ->{
             scoreboard.updateScore("Mexico", " ",0,1);
+        });
+    }
+
+
+    //all tests for finishMatch
+    @Test
+    public void testFinishMatch(){
+        //starting new match that is added to the list ongoingMatches
+        scoreboard.startMatch("Mexico","Canada");
+        //finding that same match in the list and removing it
+        scoreboard.finishMatch("Mexico", "Canada");
+        //after the match is finished, checking if the list is empty
+        assertTrue(scoreboard.testOngoingMatches().isEmpty());
+    }
+
+    //test for non-existing match - finishMatch
+    @Test
+    public void testFinishMatchNotFound(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.finishMatch("Spain", "Mexico");
+        });
+    }
+
+    //test to check null team names - finishMatch
+    @Test
+    public void testFinishMatchNullTeamNames(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.finishMatch(null,"Canada");
+        });
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.finishMatch("Mexico",null);
+        });
+    }
+
+    //test to check empty team names - finishMatch
+    @Test
+    public void testFinishMatchEmptyTeamNames(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.finishMatch(" ","Canada");
+        });
+        assertThrows(IllegalArgumentException.class, () ->{
+            scoreboard.finishMatch("Mexico"," ");
         });
     }
 }

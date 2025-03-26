@@ -30,7 +30,7 @@ public class Scoreboard {
     public void updateScore(String homeTeam, String awayTeam, int homeScore, int awayScore){
 
         //checking if values are null or blank
-        if (homeTeam == null || awayTeam == null || homeTeam.isBlank() || awayTeam.isBlank()){
+        if (homeTeam == null || awayTeam == null || homeTeam.isEmpty() || awayTeam.isEmpty()){
             throw new IllegalArgumentException("Team names cannot be null or empty.");
         }
 
@@ -60,6 +60,24 @@ public class Scoreboard {
     }
 
     public void finishMatch(String homeTeam, String awayTeam){
+        if (homeTeam == null || awayTeam == null || homeTeam.isEmpty() || awayTeam.isEmpty()){
+            throw new IllegalArgumentException("Team names cannot be null or empty");
+        }
+
+        Match matchToRemove = null;
+        for(int i = 0; i < ongoingMatches.size(); i++){
+            Match match = ongoingMatches.get(i);
+            if(match.getHomeTeam().equals(homeTeam) && match.getAwayTeam().equals(awayTeam)){
+                matchToRemove = match;
+                break;
+            }
+        }
+
+        if (matchToRemove == null){
+            throw new IllegalArgumentException("Match not found.");
+        }
+
+        ongoingMatches.remove(matchToRemove);
 
     }
 
