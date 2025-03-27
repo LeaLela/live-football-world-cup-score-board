@@ -54,7 +54,6 @@ public class Scoreboard {
             throw new IllegalArgumentException("Match not found");
         }
 
-
         matchToUpdate.updateScore(homeScore, awayScore);
 
     }
@@ -79,6 +78,26 @@ public class Scoreboard {
 
         ongoingMatches.remove(matchToRemove);
 
+    }
+
+    public List<Match> getSummary(){
+        //copy of ongoingMatches list so that original list stays the same
+        List<Match> summary = new ArrayList<>(ongoingMatches);
+
+        //sorting out - first by total goals then by the order that matches were added in the list
+        summary.sort((m1,m2) -> {
+            int totalGoals1 = m1.getHomeScore() + m1.getAwayScore();
+            int totalGoals2 = m2.getHomeScore() + m2.getAwayScore();
+
+            //sorting by total goals in descending order
+            if (totalGoals2 != totalGoals1){
+                return Integer.compare(totalGoals2, totalGoals1);
+            }
+
+            //sorting by index of ongoingMatches in case total goals are the same(most recently added goes on top)
+            return Integer.compare(ongoingMatches.indexOf(m2), ongoingMatches.indexOf(m1));
+        });
+        return summary;
     }
 
     //getter for test to see if match was added in the list

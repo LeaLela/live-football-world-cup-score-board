@@ -175,4 +175,33 @@ public class ScoreBoardTest {
             scoreboard.finishMatch("Mexico"," ");
         });
     }
+
+    //test for getSummary
+    @Test
+    public void testGetSummary(){
+        Scoreboard scoreboard = new Scoreboard();
+
+        scoreboard.startMatch("Mexico", "Canada");
+        scoreboard.startMatch("Spain", "Brazil");
+        scoreboard.startMatch("Germany", "France");
+        scoreboard.startMatch("Uruguay", "Italy");
+        scoreboard.startMatch("Argentina", "Australia");
+
+        scoreboard.updateScore("Mexico", "Canada", 0, 5); //total 5, index 2
+        scoreboard.updateScore("Spain", "Brazil", 10, 2); //total 12, index 1
+        scoreboard.updateScore("Germany", "France", 2, 2); //total 4, index 4
+        scoreboard.updateScore("Uruguay", "Italy", 6, 6); //total 12, recently added, index 0
+        scoreboard.updateScore("Argentina", "Australia", 3, 1); //total 4, recently added, index 3
+
+        List<Match> summary = scoreboard.getSummary();
+
+        //summary.get().getHomeTeam() takes each Match object by index from the list and checks if hometeam is right
+        assertEquals("Uruguay", summary.get(0).getHomeTeam());
+        assertEquals("Spain", summary.get(1).getHomeTeam());
+        assertEquals("Mexico", summary.get(2).getHomeTeam());
+        assertEquals("Argentina", summary.get(3).getHomeTeam());
+        assertEquals("Germany", summary.get(4).getHomeTeam());
+
+
+    }
 }
