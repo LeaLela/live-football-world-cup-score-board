@@ -1,5 +1,7 @@
-package org.example;
+package org.test1;
 
+import org.list.Match;
+import org.list.Scoreboard;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 

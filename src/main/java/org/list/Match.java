@@ -1,4 +1,4 @@
-package org.example;
+package org.list;
 
 public class Match {
     private final String homeTeam;
