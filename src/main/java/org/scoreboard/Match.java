@@ -1,4 +1,4 @@
-package org.list;
+package org.scoreboard;
 
 public class Match {
     private final String homeTeam;

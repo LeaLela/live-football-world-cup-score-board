@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="473d1b2f-47b7-4df0-871f-7e1960e9da9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/list/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/list/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/list/Scoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ScoreBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/test1/ScoreBoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/list/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/list/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/list/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/Scoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/test1/ScoreBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/scoreboard/ScoreBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +79,9 @@
       <recent name="C:\Users\Korisnik\IdeaProjects\live-football-world-cup-score-board\lib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org" />
       <recent name="org.list" />
       <recent name="org.test1" />
-      <recent name="org" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,7 +127,8 @@
       <workItem from="1742993921852" duration="7115000" />
       <workItem from="1743075715667" duration="1762000" />
       <workItem from="1743100842270" duration="2016000" />
-      <workItem from="1743194658645" duration="2155000" />
+      <workItem from="1743194658645" duration="2314000" />
+      <workItem from="1743263578942" duration="1382000" />
     </task>
     <servers />
   </component>

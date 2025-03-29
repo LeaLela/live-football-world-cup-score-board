@@ -1,4 +1,4 @@
-package org.list;
+package org.scoreboard;
 
 import java.util.ArrayList;
 import java.util.List;

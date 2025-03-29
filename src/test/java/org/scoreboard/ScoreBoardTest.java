@@ -1,8 +1,7 @@
-package org.test1;
+package org.scoreboard;
 
-import org.list.Match;
-import org.list.Scoreboard;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
