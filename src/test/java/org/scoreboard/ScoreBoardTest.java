@@ -16,7 +16,7 @@ public class ScoreBoardTest {
         scoreboard.startMatch("Mexico", "Canada");
 
         //test to see if the match was added in the list
-        List<Match> matches = scoreboard.testOngoingMatches();
+        List<Match> matches = scoreboard.getSummary();
 
         assertEquals(1, matches.size());
 
@@ -73,13 +73,11 @@ public class ScoreBoardTest {
         });
     }
 
-
-    //all tests for UpdateScore
     @Test
     public void testUpdateScore(){
         scoreboard.startMatch("Mexico","Canada");
         scoreboard.updateScore("Mexico", "Canada", 0, 1);
-        Match match = scoreboard.testOngoingMatches().get(0);
+        Match match = scoreboard.getSummary().get(0);
         assertEquals(0, match.getHomeScore());
         assertEquals(1, match.getAwayScore());
     }
@@ -91,7 +89,6 @@ public class ScoreBoardTest {
             scoreboard.updateScore("Spain","Mexico", 3,0);
         });
     }
-
 
     //test for negative homeScore - updateScore
     @Test
@@ -135,8 +132,6 @@ public class ScoreBoardTest {
         });
     }
 
-
-    //all tests for finishMatch
     @Test
     public void testFinishMatch(){
         //starting new match that is added to the list ongoingMatches
@@ -144,7 +139,7 @@ public class ScoreBoardTest {
         //finding that same match in the list and removing it
         scoreboard.finishMatch("Mexico", "Canada");
         //after the match is finished, checking if the list is empty
-        assertTrue(scoreboard.testOngoingMatches().isEmpty());
+        assertTrue(scoreboard.getSummary().isEmpty());
     }
 
     //test for non-existing match - finishMatch
@@ -177,10 +172,8 @@ public class ScoreBoardTest {
         });
     }
 
-    //test for getSummary
     @Test
     public void testGetSummary(){
-        Scoreboard scoreboard = new Scoreboard();
 
         scoreboard.startMatch("Mexico", "Canada");
         scoreboard.startMatch("Spain", "Brazil");
