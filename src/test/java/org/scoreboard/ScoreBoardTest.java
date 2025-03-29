@@ -1,35 +1,24 @@
 package org.scoreboard;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ScoreBoardTest {
     Scoreboard scoreboard = new Scoreboard();
 
-    //all tests for StartMatch
     @Test
     public void testStartMatch(){
 
         scoreboard.startMatch("Mexico", "Canada");
 
-        //test to see if the match was added in the list
         List<Match> matches = scoreboard.getSummary();
 
         assertEquals(1, matches.size());
-
-        //check expected value of homeTeam and the one added in the list
+        //checking expected value of teams and scores and the one added in the list
         assertEquals("Mexico", matches.get(0).getHomeTeam());
-
-        //check expected value of awayTeam and the one added in the list
         assertEquals("Canada", matches.get(0).getAwayTeam());
-
-        //check expected value of homeScore and the one added in the list
         assertEquals(0, matches.get(0).getHomeScore());
-
-        //check expected value of awayScore and the one added in the list
         assertEquals(0, matches.get(0).getAwayScore());
     }
 
@@ -134,7 +123,7 @@ public class ScoreBoardTest {
 
     @Test
     public void testFinishMatch(){
-        //starting new match that is added to the list ongoingMatches
+        //starting new match that is added to the list
         scoreboard.startMatch("Mexico","Canada");
         //finding that same match in the list and removing it
         scoreboard.finishMatch("Mexico", "Canada");
@@ -195,7 +184,5 @@ public class ScoreBoardTest {
         assertEquals("Mexico", summary.get(2).getHomeTeam());
         assertEquals("Argentina", summary.get(3).getHomeTeam());
         assertEquals("Germany", summary.get(4).getHomeTeam());
-
-
     }
 }
